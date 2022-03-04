@@ -1,0 +1,74 @@
+.BoontarTV-form {
+    background-color: #313131;
+    padding: 10px;
+    height: 100%;
+}
+
+.BoontarTV-title {
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.BoontarTV-description {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.BoontarTV-inputs-box {
+
+}
+
+.BoontarTV-button-box {
+
+}
+
+.BoontarTV-form input {
+    width: 100%;
+    margin-top: 15px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    background-color: #404040;
+    color: white;
+    border-width: 0;
+    border-radius: 5px;
+}
+
+.BoontarTV-form input::placeholder {
+    color: #898989;
+}
+
+.BoontarTV-form button {
+    width: 100%;
+    height: 40px;
+    background-color: #fd3d48;
+    color: white;
+    border-width: 0;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.BoontarTV-button-disabled {
+    background-color: #404040!important;
+}
+
+.BoontarTV-input-label {
+    padding-top: 15px;
+    text-align: left;
+    color: white;
+}
+
+.BoontarTV-success-status {
+    padding-top: 15px;
+    color: #2d9b2d;
+}
+
+.BoontarTV-failed-status {
+    padding-top: 15px;
+    color: #fd3d48;
+}
