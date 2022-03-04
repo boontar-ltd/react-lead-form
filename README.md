@@ -11,6 +11,7 @@ We also have a plug-in widget, the appearance of which is edited only in your pe
 
 ## Features
  - Faster than [Boontar TV widget](https://github.com/boontar-ltd/react-lead-form-widget)
+ - You can use your own style classes
  - Install the module and start collecting requests, ratings, reviews
  - Admin panel for viewing incoming requests [Boontar TV](https://boontar.tv)
  - Export requests
@@ -53,6 +54,11 @@ import ReactLeadForm from 'react-lead-form'
 | `successStatus` | `string` | `No` | `Form sent successfully` | Text on success |
 | `failedStatus` | `string` | `No` | `Failed to submit form` | Text on failed |
 | `requiredStatus` | `string` | `No` | `You have not filled in the required fields` | Text if all required fields were not filled|
+| `onSuccess` | `func` | `No` | - | Callback function after successful form submission |
+| `onFailed` | `func` | `No` | - | Callback function after failed form submission |
+| `onRequired` | `func` | `No` | - | Callback function if all required fields were not filled |
+| `onLoad` | `func` | `No` | - | Callback function after the lead form is loaded |
+| `onLoadFailed` | `func` | `No` | - | Callback function if lead form fails to get |
 ## Available input fields
 | Name | Included |
 | ------ |  ------ |

@@ -21,6 +21,36 @@ class BoontarTVInputs extends Component {
         }
     }
 
+    onSuccess = () => {
+        if(this.props.onSuccess) {
+            this.props.onSuccess();
+        }
+    }
+
+    onFailed = () => {
+        if(this.props.onFailed) {
+            this.props.onFailed();
+        }
+    }
+
+    onRequired = () => {
+        if(this.props.onFailed) {
+            this.props.onRequired();
+        }
+    }
+
+    onLoad = () => {
+        if(this.props.onLoad) {
+            this.props.onLoad();
+        }
+    }
+
+    onLoadFailed = () => {
+        if(this.props.onLoadFailed) {
+            this.props.onLoadFailed();
+        }
+    }
+
     inputListDefaultValues = (form) => {
         let list = this.state.inputList;
         for (var index = 0; index < form.length; ++index) {
@@ -66,6 +96,7 @@ class BoontarTVInputs extends Component {
                         this.TITLE = data.title
                         this.FILE_TYPE = data.content_type
                         this.BUTTON_TEXT = data.button_text
+                        this.onLoad()
                     }
                     if(this.state.publish === 'enabled') {
                         start_()
@@ -74,6 +105,7 @@ class BoontarTVInputs extends Component {
             }
         })
         .catch((e) => {
+            this.onLoadFailed()
         });
     }
 
@@ -89,6 +121,8 @@ class BoontarTVInputs extends Component {
                     if (documentInputs[i].value.length === 0) {
                         this.setState({
                             status: 'required'
+                        },()=>{
+                            this.onRequired()
                         })
                         return;
                     }
@@ -116,9 +150,13 @@ class BoontarTVInputs extends Component {
             })
             .then((data) => {
                 if(data.status === 'success') {
-                    this.setState({status: 'success'})
+                    this.setState({status: 'success'},()=>{
+                        this.onSuccess()
+                    })
                 } else {
-                    this.setState({status: 'failed'})
+                    this.setState({status: 'failed'},()=>{
+                        this.onFailed()
+                    })
                 }
                 this.setState({
                     sending: false,
@@ -258,6 +296,12 @@ BoontarTVInputs.propTypes = {
     successStatus: PropTypes.string,
     failedStatus: PropTypes.string,
     requiredStatus: PropTypes.string,
+
+    onSuccess: PropTypes.func,
+    onFailed: PropTypes.func,
+    onRequired: PropTypes.func,
+    onLoad: PropTypes.func,
+    onLoadFailed: PropTypes.func,
 };
 
 export default BoontarTVInputs;
