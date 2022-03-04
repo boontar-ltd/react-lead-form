@@ -94,7 +94,6 @@ class BoontarTVInputs extends Component {
                         this.inputListDefaultValues(data.form)
                         this.DESCRIPTION = data.description
                         this.TITLE = data.title
-                        this.FILE_TYPE = data.content_type
                         this.BUTTON_TEXT = data.button_text
                         this.onLoad()
                     }

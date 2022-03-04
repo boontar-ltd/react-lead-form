@@ -1,4 +1,4 @@
-const openApiUrl = 'http://localhost:9000/';
+const openApiUrl = 'https://openapi.boontar.live/';
 
 export const post = async (data = []) => {
     let headers = {
