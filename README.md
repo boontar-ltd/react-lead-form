@@ -6,7 +6,7 @@
 </p>
 
 ## Features
- - Faster than [Boontar TV widget](https://github.com/boontar/react-lead-form-widget)
+ - Faster than [Boontar TV widget](https://github.com/boontar-ltd/react-lead-form-widget)
  - Install the module and start collecting requests, ratings, reviews
  - Admin panel for viewing incoming requests [Boontar TV](https://boontar.tv)
  - Export requests
