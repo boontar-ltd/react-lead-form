@@ -1,4 +1,5 @@
 # Lead form for React JS
+[![npm](https://img.shields.io/npm/v/github-buttons)](https://www.npmjs.com/package/react-terminal-logger)
 > First you need to create an account with [Boontar TV](https://boontar.tv)
 
 We also have a plug-in widget, the appearance of which is edited only in your personal account:
