@@ -1,6 +1,9 @@
 # Lead form for React JS
 > First you need to create an account with [Boontar TV](https://boontar.tv)
 
+We also have a plug-in widget, the appearance of which is edited only in your personal account:
+[https://github.com/boontar-ltd/react-lead-form-widget](https://github.com/boontar-ltd/react-lead-form-widget)
+
 <p align="center">
   <img width="250" height="auto" src="https://boontarcloud.azureedge.net/others/lead_forrm_openapi.png" alt="Sublime's custom image"/>
 </p>
