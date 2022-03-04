@@ -15,6 +15,7 @@ class BoontarTVInputs extends Component {
             inputList: [],
             id_user: 0,
 
+            statusVisible: props.statusVisible,
             sending: false,
             status: null, //success, failed, required
             done: false,
@@ -119,7 +120,8 @@ class BoontarTVInputs extends Component {
                 if (documentInputs[i].hasAttribute('required')) {
                     if (documentInputs[i].value.length === 0) {
                         this.setState({
-                            status: 'required'
+                            status: 'required',
+                            sending: false
                         },()=>{
                             this.onRequired()
                         })
@@ -240,6 +242,8 @@ class BoontarTVInputs extends Component {
     requiredText = () => this.props.requiredStatus ? this.props.requiredStatus : "You have not filled in the required fields";
     
     status = () => {
+        if(!this.state.statusVisible) return null;
+
         switch (this.state.status) {
             case 'success':
                 return (<div className={"BoontarTV-success-status " + this.propsClassName(this.props.classNameSuccessText)}>{this.successText()}</div>)
@@ -280,6 +284,7 @@ class BoontarTVInputs extends Component {
 BoontarTVInputs.propTypes = {
     getId: PropTypes.number,
     token: PropTypes.string,
+    statusVisible: PropTypes.bool,
 
     classNameInputLabel: PropTypes.string,
     classNameInput: PropTypes.string,

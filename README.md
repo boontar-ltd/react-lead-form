@@ -51,6 +51,7 @@ import ReactLeadForm from 'react-lead-form'
 | `classNameDesc` | `string` | `No` | - | Custom class for description |
 | `classNameInputsContainer` | `string` | `No` | - | Custom class for form container |
 | `classNameButtonContainer` | `string` | `No` | - | Custom class for button and notification block |
+| `statusVisible` | `boolean` | `Yes` | `true` | Show form submission status |
 | `successStatus` | `string` | `No` | `Form sent successfully` | Text on success |
 | `failedStatus` | `string` | `No` | `Failed to submit form` | Text on failed |
 | `requiredStatus` | `string` | `No` | `You have not filled in the required fields` | Text if all required fields were not filled|
@@ -79,6 +80,7 @@ class HelloWorld extends Component {
         return(<ReactLeadForm 
                 getId={1} 
                 token={'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}
+                statusVisible={true}
               />)
     }
 }
