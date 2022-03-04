@@ -52,13 +52,13 @@ import ReactLeadForm from 'react-lead-form'
 ## Available input fields
 | Name | Included |
 | ------ |  ------ |
-| `Text` | `✅` |
-| `Number` | `✅` |
-| `Date & Time` | `✅` |
-| `Date` | `✅` |
-| `Time` | `✅` |
-| `Slider` | `❌` |
-| `Select` | `❌` |
+| `Text` | ✅ |
+| `Number` | ✅ |
+| `Date & Time` | ✅ |
+| `Date` | ✅ |
+| `Time` | ✅ |
+| `Slider` | ❌ |
+| `Select` | ❌ |
 ## Example
 ```js
 import React, { Component } from "react";
