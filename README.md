@@ -1,5 +1,5 @@
 # Lead form for React JS
-[![npm](https://img.shields.io/npm/v/github-buttons)](https://www.npmjs.com/package/react-terminal-logger)
+[![npm](https://img.shields.io/npm/v/github-buttons)](https://www.npmjs.com/package/react-lead-form)
 > First you need to create an account with [Boontar TV](https://boontar.tv)
 
 <p align="center">
