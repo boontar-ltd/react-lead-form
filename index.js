@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { post } from './src/network'
+import { validateEmail, validatePhone } from './src/validate'
 import './style.css';
 
 class BoontarTVInputs extends Component {
@@ -17,7 +18,7 @@ class BoontarTVInputs extends Component {
 
             statusVisible: props.statusVisible,
             sending: false,
-            status: null, //success, failed, required
+            status: null, //success, failed, required, validate
             done: false,
         }
     }
@@ -28,15 +29,9 @@ class BoontarTVInputs extends Component {
         }
     }
 
-    onFailed = () => {
+    onFailed = (error) => {
         if(this.props.onFailed) {
-            this.props.onFailed();
-        }
-    }
-
-    onRequired = () => {
-        if(this.props.onFailed) {
-            this.props.onRequired();
+            this.props.onFailed(error);
         }
     }
 
@@ -123,7 +118,7 @@ class BoontarTVInputs extends Component {
                             status: 'required',
                             sending: false
                         },()=>{
-                            this.onRequired()
+                            this.onFailed(2)
                         })
                         return;
                     }
@@ -134,6 +129,22 @@ class BoontarTVInputs extends Component {
             for (var i = 0; i < this.state.inputList.length; i++) {
                 if (this.state.inputList[i].tag === "custom") {
                     custom_inputs.push(this.state.inputList[i])
+                }
+                if(this.state.inputList[i].value.length > 0 && (this.state.inputList[i].tag === "email" || this.state.inputList[i].type === "email") && !validateEmail(this.state.inputList[i].value)) {
+                    this.onFailed(3)
+                    this.setState({
+                        status: 'validate',
+                        sending: false,
+                    })
+                    return;
+                }
+                if(this.state.inputList[i].value.length > 0 && (this.state.inputList[i].tag === "phone" || this.state.inputList[i].type === "tel") && !validatePhone(this.state.inputList[i].value)) {
+                    this.onFailed(4)
+                    this.setState({
+                        status: 'validate',
+                        sending: false,
+                    })
+                    return;
                 }
             }
 
@@ -156,7 +167,7 @@ class BoontarTVInputs extends Component {
                     })
                 } else {
                     this.setState({status: 'failed'},()=>{
-                        this.onFailed()
+                        this.onFailed(1)
                     })
                 }
                 this.setState({
@@ -240,6 +251,8 @@ class BoontarTVInputs extends Component {
     failedText = () => this.props.failedStatus ? this.props.failedStatus : "Failed to submit form";
 
     requiredText = () => this.props.requiredStatus ? this.props.requiredStatus : "You have not filled in the required fields";
+
+    validateText = () => this.props.validateStatus ? this.props.validateStatus : "Check the correctness of the filled data";
     
     status = () => {
         if(!this.state.statusVisible) return null;
@@ -253,6 +266,9 @@ class BoontarTVInputs extends Component {
 
             case 'required':
                 return (<div className={"BoontarTV-failed-status " + this.propsClassName(this.props.classNameFailedText)}>{this.requiredText()}</div>)
+
+            case 'validate':
+                return (<div className={"BoontarTV-failed-status " + this.propsClassName(this.props.classNameFailedText)}>{this.validateText()}</div>)
         
             default:
                 break;
@@ -300,10 +316,10 @@ BoontarTVInputs.propTypes = {
     successStatus: PropTypes.string,
     failedStatus: PropTypes.string,
     requiredStatus: PropTypes.string,
+    validateStatus: PropTypes.string,
 
     onSuccess: PropTypes.func,
     onFailed: PropTypes.func,
-    onRequired: PropTypes.func,
     onLoad: PropTypes.func,
     onLoadFailed: PropTypes.func,
 };

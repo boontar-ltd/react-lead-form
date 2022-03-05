@@ -54,12 +54,19 @@ import ReactLeadForm from 'react-lead-form'
 | `statusVisible` | `boolean` | `Yes` | `true` | Show form submission status |
 | `successStatus` | `string` | `No` | `Form sent successfully` | Text on success |
 | `failedStatus` | `string` | `No` | `Failed to submit form` | Text on failed |
-| `requiredStatus` | `string` | `No` | `You have not filled in the required fields` | Text if all required fields were not filled|
+| `requiredStatus` | `string` | `No` | `You have not filled in the required fields` | Text if all required fields were not filled |
+| `validateStatus` | `string` | `No` | `Check the correctness of the filled data` | Text if email or phone types fail validation |
 | `onSuccess` | `func` | `No` | - | Callback function after successful form submission |
 | `onFailed` | `func` | `No` | - | Callback function after failed form submission |
-| `onRequired` | `func` | `No` | - | Callback function if all required fields were not filled |
 | `onLoad` | `func` | `No` | - | Callback function after the lead form is loaded |
 | `onLoadFailed` | `func` | `No` | - | Callback function if lead form fails to get |
+## Error codes
+| Code | Description |
+| ------ |  ------ |
+| `1` | Failed to submit form |
+| `2` | Required fields not filled |
+| `3` | Not correct email |
+| `4` | Not correct phone number |
 ## Available input fields
 | Name | Included |
 | ------ |  ------ |
@@ -76,11 +83,22 @@ import React, { Component } from "react";
 import ReactLeadForm from 'react-lead-form'
 
 class HelloWorld extends Component {
+  
+    onSuccess = () => {
+
+    }
+
+    onFailed = (errorCode) => {
+      console.log(errorCode)
+    }
+
     render() {
         return(<ReactLeadForm 
                 getId={1} 
                 token={'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}
                 statusVisible={true}
+                onSuccess={this.onSuccess}
+                onFailed={this.onFailed}
               />)
     }
 }
