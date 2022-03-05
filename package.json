@@ -1,6 +1,6 @@
 {
   "name": "react-lead-form",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Lead form widget for collecting requests, ratings, reviews, etc.",
   "main": "index.js",
   "scripts": {
