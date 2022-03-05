@@ -75,7 +75,7 @@ class BoontarTVInputs extends Component {
         post({
             url: `form/${this.state.id_get}`,
             body: {
-                token: this.props.token
+                token: this.props.apiKey
             }
         })
         .then((data) => {
@@ -157,7 +157,7 @@ class BoontarTVInputs extends Component {
                     custom: JSON.stringify(custom_inputs),
                     client_id: "0",
                     id_get: this.state.id_get,
-                    token: this.props.token
+                    token: this.props.apiKey
                 }
             })
             .then((data) => {
@@ -299,7 +299,7 @@ class BoontarTVInputs extends Component {
 
 BoontarTVInputs.propTypes = {
     getId: PropTypes.number,
-    token: PropTypes.string,
+    apiKey: PropTypes.string,
     statusVisible: PropTypes.bool,
 
     classNameInputLabel: PropTypes.string,

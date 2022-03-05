@@ -37,7 +37,7 @@ import ReactLeadForm from 'react-lead-form'
 | Name | Type | Required | Default | Description |
 | ------ | ------ | ------ | ------ | ------ |
 | `getId` | `number` | `Yes` | - | Lead form unique ID at Boontar TV |
-| `token` | `string` | `Yes` | - | Token (key) that you generate in the admin panel [Boontar TV](https://boontar.tv) |
+| `apiKey` | `string` | `Yes` | - | Key that you generate in the admin panel [Boontar TV](https://boontar.tv) |
 | `classNameInputLabel` | `string` | `No` | - | Custom class for InputLabel |
 | `classNameInput` | `string` | `No` | - | Custom class for inputs |
 | `classNameButton` | `string` | `No` | - | Custom class for button |
@@ -92,7 +92,7 @@ class HelloWorld extends Component {
     render() {
         return(<ReactLeadForm 
                 getId={1} 
-                token={'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}
+                apiKey={'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}
                 statusVisible={true}
                 onSuccess={this.onSuccess}
                 onFailed={this.onFailed}
