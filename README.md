@@ -2,9 +2,6 @@
 [![npm](https://img.shields.io/npm/v/github-buttons)](https://www.npmjs.com/package/react-terminal-logger)
 > First you need to create an account with [Boontar TV](https://boontar.tv)
 
-We also have a plug-in widget, the appearance of which is edited only in your personal account:
-[https://github.com/boontar-ltd/react-lead-form-widget](https://github.com/boontar-ltd/react-lead-form-widget)
-
 <p align="center">
   <img width="250" height="auto" src="https://boontarcloud.azureedge.net/others/lead_form_openapi.png" alt="Sublime's custom image"/>
 </p>
@@ -103,3 +100,6 @@ class HelloWorld extends Component {
     }
 }
 ```
+
+We also have a plug-in widget, the appearance of which is edited only in your personal account:
+[https://github.com/boontar-ltd/react-lead-form-widget](https://github.com/boontar-ltd/react-lead-form-widget)
