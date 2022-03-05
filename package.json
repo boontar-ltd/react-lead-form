@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/boontar-ltd/react-lead-form#readme",
   "dependencies": {
+    "@babel/core": "7.12.3",
     "react-linkify": "^1.0.0-alpha"
   },
   "keywords": [
