@@ -16,6 +16,9 @@
     "url": "https://github.com/boontar-ltd/react-lead-form/issues"
   },
   "homepage": "https://github.com/boontar-ltd/react-lead-form#readme",
+  "dependencies": {
+    "react-linkify": "^1.0.0-alpha"
+  },
   "keywords": [
     "reactjs",
     "react",
