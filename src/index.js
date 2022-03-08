@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { post } from './components/network'
 import { validateEmail, validatePhone } from './components/validate'
-import './styles.module.css';
+import './styles.css';
 
 class BoontarTVInputs extends Component {
     constructor(props) {
