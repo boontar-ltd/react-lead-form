@@ -91,8 +91,8 @@ class HelloWorld extends Component {
 
     render() {
         return(<ReactLeadForm 
-                getId={1} 
-                apiKey={'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}
+                getId={481} 
+                apiKey={'b0f36535c5752895a8f359fcce725cb0d32f51f2'}
                 statusVisible={true}
                 onSuccess={this.onSuccess}
                 onFailed={this.onFailed}
