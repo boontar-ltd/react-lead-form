@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { post } from './components/network'
 import { validateEmail, validatePhone } from './components/validate'
-import './styles.module.css';
+import styles from './styles.module.css';
 
 class BoontarTVInputs extends Component {
     constructor(props) {
@@ -110,7 +110,7 @@ class BoontarTVInputs extends Component {
         this.setState({
             sending: true,
         }, ()=>{
-            var documentInputs = document.getElementsByClassName('BoontarTV-input');
+            var documentInputs = document.getElementsByName('input');
             for (let i = 0; i < documentInputs.length; i++) {
                 if (documentInputs[i].hasAttribute('required')) {
                     if (documentInputs[i].value.length === 0) {
@@ -214,7 +214,7 @@ class BoontarTVInputs extends Component {
                 type={l.inputType}
                 placeholder={l.inputName + (l.required ? '*' : '')}
                 value={this.state.inputList[i].value}
-                className={"BoontarTV-input " + this.propsClassName(this.props.classNameInput)}
+                className={styles.BoontarTVInput + " " + this.propsClassName(this.props.classNameInput)}
                 onChange={(event) =>{
                     this.handleInputChange(event, i)
                 }}
@@ -234,7 +234,7 @@ class BoontarTVInputs extends Component {
             }
             if(l.inputType === 'datetime-local' || l.inputType === "date" || l.inputType === "time") {
                 return (<div>
-                            <div className={"BoontarTV-input-label " + this.propsClassName(this.props.classNameInputLabel)}>{l.inputName + (l.required ? '*' : '')}</div>
+                            <div className={styles.BoontarTVInputLabel + " " + this.propsClassName(this.props.classNameInputLabel)}>{l.inputName + (l.required ? '*' : '')}</div>
                             {this.input(l, i)}
                         </div>)
             }
@@ -244,7 +244,7 @@ class BoontarTVInputs extends Component {
 
     propsClassName = (prop) => prop ? prop : "";
 
-    renderButton = () => <button onClick={() => this.submit()} className={(this.state.sending && 'BoontarTV-button-disabled') + this.propsClassName(this.props.classNameButton)}>{this.BUTTON_TEXT}</button>
+    renderButton = () => <button onClick={() => this.submit()} className={(this.state.sending && styles.BoontarTVButtonDisabled) + this.propsClassName(this.props.classNameButton)}>{this.BUTTON_TEXT}</button>
 
     successText = () => this.props.successStatus ? this.props.successStatus : "Form sent successfully";
 
@@ -259,16 +259,16 @@ class BoontarTVInputs extends Component {
 
         switch (this.state.status) {
             case 'success':
-                return (<div className={"BoontarTV-success-status " + this.propsClassName(this.props.classNameSuccessText)}>{this.successText()}</div>)
+                return (<div className={styles.BoontarTVSuccessStatus + " " + this.propsClassName(this.props.classNameSuccessText)}>{this.successText()}</div>)
 
             case 'failed':
-                return (<div className={"BoontarTV-failed-status " + this.propsClassName(this.props.classNameFailedText)}>{this.failedText()}</div>)
+                return (<div className={styles.BoontarTVFailedstatus + " " + this.propsClassName(this.props.classNameFailedText)}>{this.failedText()}</div>)
 
             case 'required':
-                return (<div className={"BoontarTV-failed-status " + this.propsClassName(this.props.classNameFailedText)}>{this.requiredText()}</div>)
+                return (<div className={styles.BoontarTVFailedStatus + " " + this.propsClassName(this.props.classNameFailedText)}>{this.requiredText()}</div>)
 
             case 'validate':
-                return (<div className={"BoontarTV-failed-status " + this.propsClassName(this.props.classNameFailedText)}>{this.validateText()}</div>)
+                return (<div className={styles.BoontarTVFailedStatus + " " + this.propsClassName(this.props.classNameFailedText)}>{this.validateText()}</div>)
         
             default:
                 break;
@@ -283,13 +283,13 @@ class BoontarTVInputs extends Component {
     render() {
         if(!this.state.done) return null;
 
-        return (<div className={"BoontarTV-form " + this.propsClassName(this.props.classNameContainer)}>
-                    <div className={"BoontarTV-title " + this.propsClassName(this.props.classNameTitle)}>{this.TITLE}</div>
-                    <div className={"BoontarTV-description " + this.propsClassName(this.props.classNameDesc)}>{this.DESCRIPTION}</div>
-                    <div className={"BoontarTV-inputs-box " + this.propsClassName(this.props.classNameInputsContainer)}>
+        return (<div className={styles.BoontarTVForm + " " + this.propsClassName(this.props.classNameContainer)}>
+                    <div className={styles.BoontarTVTitle + " " + this.propsClassName(this.props.classNameTitle)}>{this.TITLE}</div>
+                    <div className={styles.BoontarTVDDescription + " " + this.propsClassName(this.props.classNameDesc)}>{this.DESCRIPTION}</div>
+                    <div className={styles.BoontarTVInputsBox + " " + this.propsClassName(this.props.classNameInputsContainer)}>
                         {this.renderInputs()}
                     </div>
-                    <div className={"BoontarTV-button-box " + this.propsClassName(this.props.classNameButtonContainer)}>
+                    <div className={styles.BoontarTVButtonBox + " " + this.propsClassName(this.props.classNameButtonContainer)}>
                         {this.status()}
                         {this.renderButton()}
                     </div>
