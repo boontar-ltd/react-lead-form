@@ -78,6 +78,7 @@ import ReactLeadForm from 'react-lead-form'
 ```js
 import React, { Component } from "react";
 import ReactLeadForm from 'react-lead-form'
+import 'react-lead-form/dist/index.css'
 
 class HelloWorld extends Component {
   

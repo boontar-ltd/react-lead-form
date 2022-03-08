@@ -5,8 +5,8 @@ import 'react-lead-form/dist/index.css'
 
 const App = () => {
   return <ReactLeadForm 
-            getId={461} 
-            apiKey={'8fbe1f4b735c2d2343752418f0f0f6a98b193bba'}
+            getId={1} 
+            apiKey={'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}
             statusVisible={true}
             onSuccess={()=>{}}
             onFailed={(errorCode)=>{}}
