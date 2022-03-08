@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { post } from './components/network'
 import { validateEmail, validatePhone } from './components/validate'
+import Linkify from 'react-linkify';
 import styles from './styles.module.css';
 
 class BoontarTVInputs extends Component {
@@ -285,7 +286,11 @@ class BoontarTVInputs extends Component {
 
         return (<div className={styles.BoontarTVForm + " " + this.propsClassName(this.props.classNameContainer)}>
                     <div className={styles.BoontarTVTitle + " " + this.propsClassName(this.props.classNameTitle)}>{this.TITLE}</div>
-                    <div className={styles.BoontarTVDescription + " " + this.propsClassName(this.props.classNameDesc)}>{this.DESCRIPTION}</div>
+                    <div className={styles.BoontarTVDescription + " " + this.propsClassName(this.props.classNameDesc)}>
+                        <Linkify>
+                            {this.DESCRIPTION}
+                        </Linkify>
+                    </div>
                     <div className={styles.BoontarTVInputsBox + " " + this.propsClassName(this.props.classNameInputsContainer)}>
                         {this.renderInputs()}
                     </div>

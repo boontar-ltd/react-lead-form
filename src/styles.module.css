@@ -35,6 +35,10 @@
   color: #898989;
 }
 
+.BoontarTVForm a {
+  color: #fd3d48;
+}
+
 .BoontarTVForm button {
   width: 100%;
   height: 40px;
@@ -74,5 +78,5 @@
 }
 
 .BoontarTVInput {
-  
+
 }
