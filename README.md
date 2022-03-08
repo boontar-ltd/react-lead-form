@@ -13,7 +13,6 @@
  - Admin panel for viewing incoming requests [Boontar TV](https://boontar.tv)
  - Export requests
  - Embedded analytics
- - Integration Google Analytics
 
 ## Admin panel
 List of incoming requests in the admin panel [Boontar TV](https://boontar.tv)

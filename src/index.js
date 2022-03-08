@@ -110,7 +110,7 @@ class BoontarTVInputs extends Component {
         this.setState({
             sending: true,
         }, ()=>{
-            var documentInputs = document.getElementsByName('input');
+            var documentInputs = document.getElementsByClassName(styles.BoontarTVInput);
             for (let i = 0; i < documentInputs.length; i++) {
                 if (documentInputs[i].hasAttribute('required')) {
                     if (documentInputs[i].value.length === 0) {
