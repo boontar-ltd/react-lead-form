@@ -285,7 +285,7 @@ class BoontarTVInputs extends Component {
 
         return (<div className={styles.BoontarTVForm + " " + this.propsClassName(this.props.classNameContainer)}>
                     <div className={styles.BoontarTVTitle + " " + this.propsClassName(this.props.classNameTitle)}>{this.TITLE}</div>
-                    <div className={styles.BoontarTVDDescription + " " + this.propsClassName(this.props.classNameDesc)}>{this.DESCRIPTION}</div>
+                    <div className={styles.BoontarTVDescription + " " + this.propsClassName(this.props.classNameDesc)}>{this.DESCRIPTION}</div>
                     <div className={styles.BoontarTVInputsBox + " " + this.propsClassName(this.props.classNameInputsContainer)}>
                         {this.renderInputs()}
                     </div>
