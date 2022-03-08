@@ -1,48 +1,54 @@
 {
   "name": "react-lead-form",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Lead form widget for collecting requests, ratings, reviews, etc.",
-  "main": "index.js",
+  "author": "SyysBiir",
+  "license": "MIT",
+  "repository": "boontar-ltd/react-lead-form",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.js",
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "prepare": "run-s build",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "predeploy": "cd example && npm install && npm run build",
+    "deploy": "gh-pages -d example/build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/boontar-ltd/react-lead-form.git"
+  "peerDependencies": {
+    "react": "^16.0.0"
   },
-  "author": "syysbiir",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/boontar-ltd/react-lead-form/issues"
-  },
-  "homepage": "https://github.com/boontar-ltd/react-lead-form#readme",
-  "dependencies": {
-    "@babel/polyfill": "^7.12.1",
-    "prop-types": "^15.6.0",
-    "react-linkify": "^1.0.0-alpha"
-  },
-  "keywords": [
-    "reactjs",
-    "react",
-    "lead form",
-    "leadForm",
-    "form",
-    "requests",
-    "iframe",
-    "boontar",
-    "forms",
-    "custom form",
-    "user data",
-    "inputs",
-    "form UI",
-    "inputs UI",
-    "ratings",
-    "reviews",
-    "collecting"
-  ],
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.5",
-    "@babel/preset-env": "^7.16.11"
-  }
+    "microbundle-crl": "^0.13.10",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "prop-types": "^15.6.0"
+  },
+  "files": [
+    "dist"
+  ]
 }

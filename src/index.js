@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import { post } from './src/network'
-import { validateEmail, validatePhone } from './src/validate'
-import './style.css';
+import { post } from './components/network'
+import { validateEmail, validatePhone } from './components/validate'
+import './styles.module.css';
 
 class BoontarTVInputs extends Component {
     constructor(props) {
